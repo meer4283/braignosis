@@ -27,4 +27,4 @@ Pillow==9.0.1
 pybase64==1.0.1
 numpy>=1.11.0
 regex==2020.6.8
-tensorflow==2.8.0
+tensorflow>=2.4.0
