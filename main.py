@@ -158,4 +158,7 @@ def update_output(list_of_contents):
         return (no_update, no_update, no_update, no_update)  
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    # This is used when running locally only. When deploying to Google App
+    # Engine, a webserver process such as Gunicorn will serve the app.
+    app.run(host='127.0.0.1', port=8080, debug=True)
+# [END gae_flex_quickstart]
