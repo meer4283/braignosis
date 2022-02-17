@@ -123,9 +123,9 @@ def update_output(list_of_contents):
         classification = np.where(answ == np.amax(answ))[1][0]
         pred=str(round(answ[0][classification]*100 ,3)) + '% confidence there is ' + names(classification)
         
-        url = 'http://192.168.0.115/python/insert.php'
-        myobj = {'data': str(round(answ[0][classification]*100 ,3)) + '% confidence there is ' + names(classification)}
-        x = requests.post(url, data = myobj)
+        # url = 'http://192.168.0.115/python/insert.php'
+        # myobj = {'data': str(round(answ[0][classification]*100 ,3)) + '% confidence there is ' + names(classification)}
+        # x = requests.post(url, data = myobj)
         
         #Second prediction and facts about tumor if there is
         if classification==0:
@@ -160,5 +160,5 @@ def update_output(list_of_contents):
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app.
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 # [END gae_flex_quickstart]
